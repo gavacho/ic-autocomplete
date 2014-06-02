@@ -123,6 +123,14 @@ test('autocompletes text', function() {
           assertSelection('tah', 'selects fragment');
 });
 
+test('does not autocomplete overzealously', function() {
+  setup(this);
+  input[0].value = 't';
+  input.simulate('keyup', {keyCode: 116});
+          equal(input[0].value, 't');
+          assertSelection('', 'selects fragment');
+});
+
 test('does not autocomplete on backspace', function() {
   setup(this);
   input[0].value = 'Uta';

@@ -263,7 +263,7 @@ define(
        * @method handleKeydown
        * @private
        */
-     
+
       handleKeydown: function(event) {
         var map = this.get('keydownMap');
         var method = map[event.keyCode];
@@ -318,7 +318,7 @@ define(
         if (input === '') {
           return;
         }
-        if (label.toLowerCase().indexOf(input.toLowerCase()) == -1) {
+        if (label.toLowerCase().indexOf(input.toLowerCase()) !== 0) {
           return
         }
         var fragment = label.substring(input.length);
